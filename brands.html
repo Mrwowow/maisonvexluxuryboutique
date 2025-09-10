@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brands - Maison Vex | International & African Luxury</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+</head>
+<body>
+    <!-- Header will be loaded by JavaScript -->
+    <div id="header"></div>
+
+    <!-- Page Hero -->
+    <section style="margin-top: 100px; padding: 60px 5%; background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);">
+        <h1 style="text-align: center; font-size: 42px; font-weight: 300; letter-spacing: 5px; margin-bottom: 20px;">OUR BRANDS</h1>
+        <p style="text-align: center; color: var(--gray); font-size: 16px; letter-spacing: 1px;">Curating the World's Finest Fashion Houses</p>
+    </section>
+
+    <!-- International Brands Section -->
+    <section id="brands">
+        <h2 class="section-title">INTERNATIONAL HOUSES</h2>
+        <div class="brands-grid">
+            <div class="brand-card">
+                <div class="brand-name">CHANEL</div>
+                <div class="brand-origin">Paris, France</div>
+            </div>
+            <div class="brand-card">
+                <div class="brand-name">GUCCI</div>
+                <div class="brand-origin">Florence, Italy</div>
+            </div>
+            <div class="brand-card">
+                <div class="brand-name">LOUIS VUITTON</div>
+                <div class="brand-origin">Paris, France</div>
+            </div>
+            <div class="brand-card">
+                <div class="brand-name">DOLCE & GABBANA</div>
+                <div class="brand-origin">Milan, Italy</div>
+            </div>
+            <div class="brand-card">
+                <div class="brand-name">BALMAIN</div>
+                <div class="brand-origin">Paris, France</div>
+            </div>
+            <div class="brand-card">
+                <div class="brand-name">VALENTINO</div>
+                <div class="brand-origin">Rome, Italy</div>
+            </div>
+            <div class="brand-card">
+                <div class="brand-name">PRADA</div>
+                <div class="brand-origin">Milan, Italy</div>
+            </div>
+            <div class="brand-card">
+                <div class="brand-name">DIOR</div>
+                <div class="brand-origin">Paris, France</div>
+            </div>
+            <div class="brand-card">
+                <div class="brand-name">VERSACE</div>
+                <div class="brand-origin">Milan, Italy</div>
+            </div>
+            <div class="brand-card">
+                <div class="brand-name">BURBERRY</div>
+                <div class="brand-origin">London, UK</div>
+            </div>
+            <div class="brand-card">
+                <div class="brand-name">SAINT LAURENT</div>
+                <div class="brand-origin">Paris, France</div>
+            </div>
+            <div class="brand-card">
+                <div class="brand-name">BALENCIAGA</div>
+                <div class="brand-origin">Paris, France</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- African Brands Section -->
+    <section>
+        <h2 class="section-title">AFRICAN EXCELLENCE</h2>
+        <div class="brands-grid">
+            <div class="brand-card">
+                <div class="brand-name">BORIAH COUTURE</div>
+                <div class="brand-origin">Nigeria</div>
+            </div>
+            <div class="brand-card">
+                <div class="brand-name">VERANORA COUTURE</div>
+                <div class="brand-origin">Nigeria</div>
+            </div>
+            <div class="brand-card">
+                <div class="brand-name">UTTERSPACE</div>
+                <div class="brand-origin">Luxury Fashion</div>
+            </div>
+            <div class="brand-card">
+                <div class="brand-name">GLOWTARZ</div>
+                <div class="brand-origin">House of Vogue</div>
+            </div>
+            <div class="brand-card">
+                <div class="brand-name">NINI FASHION</div>
+                <div class="brand-origin">Nigeria</div>
+            </div>
+            <div class="brand-card">
+                <div class="brand-name">NOVA BLVD</div>
+                <div class="brand-origin">by Oma</div>
+            </div>
+            <div class="brand-card">
+                <div class="brand-name">LISA FOLAWIYO</div>
+                <div class="brand-origin">Nigeria</div>
+            </div>
+            <div class="brand-card">
+                <div class="brand-name">DEOLA SAGOE</div>
+                <div class="brand-origin">Nigeria</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-header">
+            <h3>Shopping Bag</h3>
+            <button class="close-cart" onclick="toggleCart()">×</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be displayed here -->
+        </div>
+        <div class="cart-total">
+            <div style="display: flex; justify-content: space-between;">
+                <span>Total:</span>
+                <span id="cartTotal">$0</span>
+            </div>
+        </div>
+        <button class="checkout-btn" onclick="processCheckout()">PROCEED TO CHECKOUT</button>
+    </div>
+
+    <!-- Footer will be loaded by JavaScript -->
+    <div id="footer"></div>
+
+    <script src="script.js"></script>
+    <script src="header.js"></script>
+    <script src="footer.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCart();
+        });
+    </script>
+</body>
+</html>

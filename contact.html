@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Maison Vex | Visit Our Boutique</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <style>
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin: 60px 0;
+        }
+        .contact-info-card {
+            background: white;
+            padding: 40px;
+            border: 1px solid var(--light-gray);
+            text-align: center;
+        }
+        .contact-icon {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: var(--luxury-gold);
+        }
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border: 1px solid var(--light-gray);
+        }
+        .form-group {
+            margin-bottom: 25px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--gray);
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--light-gray);
+            font-size: 14px;
+            font-family: inherit;
+        }
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: var(--primary-black);
+            color: white;
+            border: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .submit-btn:hover {
+            background: var(--dark-gray);
+        }
+        .map-container {
+            width: 100%;
+            height: 400px;
+            background: var(--light-gray);
+            margin: 40px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header will be loaded by JavaScript -->
+    <div id="header"></div>
+
+    <!-- Page Hero -->
+    <section style="margin-top: 100px; padding: 60px 5%; background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);">
+        <h1 style="text-align: center; font-size: 42px; font-weight: 300; letter-spacing: 5px; margin-bottom: 20px;">CONTACT US</h1>
+        <p style="text-align: center; color: var(--gray); font-size: 16px; letter-spacing: 1px;">We'd Love to Hear From You</p>
+    </section>
+
+    <!-- Contact Information -->
+    <section id="contact">
+        <h2 class="section-title">GET IN TOUCH</h2>
+        
+        <div class="contact-grid">
+            <div class="contact-info-card">
+                <div class="contact-icon">📍</div>
+                <h3 style="font-size: 18px; margin-bottom: 15px; letter-spacing: 1px;">VISIT US</h3>
+                <p style="line-height: 1.8; color: var(--gray);">
+                    42B Libreville Crescent<br>
+                    Wuse 2, Abuja<br>
+                    Nigeria
+                </p>
+            </div>
+            
+            <div class="contact-info-card">
+                <div class="contact-icon">📞</div>
+                <h3 style="font-size: 18px; margin-bottom: 15px; letter-spacing: 1px;">CALL US</h3>
+                <p style="line-height: 1.8; color: var(--gray);">
+                    Main: +234 XXX XXX XXXX<br>
+                    WhatsApp: +234 XXX XXX XXXX<br>
+                    Personal Shopping: +234 XXX XXX XXXX
+                </p>
+            </div>
+            
+            <div class="contact-info-card">
+                <div class="contact-icon">⏰</div>
+                <h3 style="font-size: 18px; margin-bottom: 15px; letter-spacing: 1px;">HOURS</h3>
+                <p style="line-height: 1.8; color: var(--gray);">
+                    Monday - Friday: 10:00 AM - 8:00 PM<br>
+                    Saturday: 10:00 AM - 7:00 PM<br>
+                    Sunday: By Appointment
+                </p>
+            </div>
+        </div>
+
+        <!-- Map Placeholder -->
+        <div class="map-container">
+            <p>Interactive Map - 42B Libreville Crescent, Wuse 2, Abuja</p>
+        </div>
+
+        <!-- Contact Form -->
+        <div style="margin-top: 60px;">
+            <h2 class="section-title">SEND US A MESSAGE</h2>
+            
+            <form class="contact-form" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">SEND MESSAGE</button>
+            </form>
+        </div>
+
+        <!-- Additional Services -->
+        <div style="margin-top: 60px;">
+            <h2 class="section-title">EXCLUSIVE SERVICES</h2>
+            
+            <div class="contact-grid">
+                <div style="text-align: center;">
+                    <h3 style="font-size: 18px; margin-bottom: 15px; color: var(--luxury-gold);">PERSONAL SHOPPING</h3>
+                    <p style="font-size: 14px; line-height: 1.6; color: var(--gray);">
+                        Book a one-on-one consultation with our expert stylists for a personalized shopping experience.
+                    </p>
+                </div>
+                
+                <div style="text-align: center;">
+                    <h3 style="font-size: 18px; margin-bottom: 15px; color: var(--luxury-gold);">PRIVATE APPOINTMENTS</h3>
+                    <p style="font-size: 14px; line-height: 1.6; color: var(--gray);">
+                        Enjoy exclusive access to our boutique outside regular hours for a truly private shopping experience.
+                    </p>
+                </div>
+                
+                <div style="text-align: center;">
+                    <h3 style="font-size: 18px; margin-bottom: 15px; color: var(--luxury-gold);">INTERNATIONAL ORDERS</h3>
+                    <p style="font-size: 14px; line-height: 1.6; color: var(--gray);">
+                        We source specific items from international fashion houses upon request.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Social Media -->
+        <div style="margin-top: 60px; text-align: center;">
+            <h3 style="font-size: 24px; margin-bottom: 30px; letter-spacing: 2px;">FOLLOW US</h3>
+            <div style="display: flex; justify-content: center; gap: 30px;">
+                <a href="#" style="text-decoration: none; color: var(--primary-black); font-size: 14px; letter-spacing: 1px;">INSTAGRAM</a>
+                <a href="#" style="text-decoration: none; color: var(--primary-black); font-size: 14px; letter-spacing: 1px;">FACEBOOK</a>
+                <a href="#" style="text-decoration: none; color: var(--primary-black); font-size: 14px; letter-spacing: 1px;">TWITTER</a>
+                <a href="#" style="text-decoration: none; color: var(--primary-black); font-size: 14px; letter-spacing: 1px;">PINTEREST</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-header">
+            <h3>Shopping Bag</h3>
+            <button class="close-cart" onclick="toggleCart()">×</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be displayed here -->
+        </div>
+        <div class="cart-total">
+            <div style="display: flex; justify-content: space-between;">
+                <span>Total:</span>
+                <span id="cartTotal">$0</span>
+            </div>
+        </div>
+        <button class="checkout-btn" onclick="processCheckout()">PROCEED TO CHECKOUT</button>
+    </div>
+
+    <!-- Footer will be loaded by JavaScript -->
+    <div id="footer"></div>
+
+    <script src="script.js"></script>
+    <script src="header.js"></script>
+    <script src="footer.js"></script>
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('Thank you for your message! We will get back to you within 24 hours.');
+            event.target.reset();
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCart();
+        });
+    </script>
+</body>
+</html>

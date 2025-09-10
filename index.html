@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maison Vex - Home | Luxury Fashion Boutique Abuja</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+</head>
+<body>
+    <!-- Header will be loaded by JavaScript -->
+    <div id="header"></div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>MAISON VEX</h1>
+            <p>Where Global Luxury Meets Local Elegance</p>
+            <a href="shop.html" class="cta-button">Explore Collection</a>
+        </div>
+    </section>
+
+    <!-- Featured Brands Preview -->
+    <section>
+        <h2 class="section-title">FEATURED BRANDS</h2>
+        <div class="brands-grid">
+            <div class="brand-card" onclick="window.location.href='brands.html'">
+                <div class="brand-name">CHANEL</div>
+                <div class="brand-origin">Paris, France</div>
+            </div>
+            <div class="brand-card" onclick="window.location.href='brands.html'">
+                <div class="brand-name">GUCCI</div>
+                <div class="brand-origin">Florence, Italy</div>
+            </div>
+            <div class="brand-card" onclick="window.location.href='brands.html'">
+                <div class="brand-name">LOUIS VUITTON</div>
+                <div class="brand-origin">Paris, France</div>
+            </div>
+            <div class="brand-card" onclick="window.location.href='brands.html'">
+                <div class="brand-name">BORIAH COUTURE</div>
+                <div class="brand-origin">Nigeria</div>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="brands.html" class="cta-button" style="color: var(--primary-black); border-color: var(--primary-black);">View All Brands</a>
+        </div>
+    </section>
+
+    <!-- Featured Products Preview -->
+    <section>
+        <h2 class="section-title">NEW ARRIVALS</h2>
+        <div class="products-grid" id="featuredProducts">
+            <!-- Products will be loaded here -->
+        </div>
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="shop.html" class="cta-button" style="color: var(--primary-black); border-color: var(--primary-black);">Shop All Products</a>
+        </div>
+    </section>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-header">
+            <h3>Shopping Bag</h3>
+            <button class="close-cart" onclick="toggleCart()">×</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be displayed here -->
+        </div>
+        <div class="cart-total">
+            <div style="display: flex; justify-content: space-between;">
+                <span>Total:</span>
+                <span id="cartTotal">$0</span>
+            </div>
+        </div>
+        <button class="checkout-btn" onclick="processCheckout()">PROCEED TO CHECKOUT</button>
+    </div>
+
+    <!-- Footer will be loaded by JavaScript -->
+    <div id="footer"></div>
+
+    <script src="script.js"></script>
+    <script src="header.js"></script>
+    <script src="footer.js"></script>
+    <script>
+        // Load only 4 featured products on home page
+        document.addEventListener('DOMContentLoaded', () => {
+            const featuredProducts = products.slice(0, 4);
+            const productsGrid = document.getElementById('featuredProducts');
+            productsGrid.innerHTML = featuredProducts.map(product => `
+                <div class="product-card">
+                    <div class="product-image" style="background-image: url('${product.image}'); background-size: cover; background-position: center;">
+                        <div class="product-badge">${product.badge}</div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-brand">${product.brand}</div>
+                        <div class="product-name">${product.name}</div>
+                        <div class="product-description" style="font-size: 12px; color: var(--gray); margin: 8px 0; line-height: 1.4;">${product.description}</div>
+                        <div class="product-price">$${product.price.toLocaleString()}</div>
+                        <button class="add-to-cart" onclick="addToCart(${product.id})">ADD TO BAG</button>
+                    </div>
+                </div>
+            `).join('');
+            updateCart();
+        });
+    </script>
+</body>
+</html>

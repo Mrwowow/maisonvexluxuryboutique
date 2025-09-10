@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maison Vex Luxury Boutique - Abuja's Premier Fashion Destination</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="announcement-bar">
+            COMPLIMENTARY SHIPPING ON ORDERS ABOVE ₦200,000 | AUTHENTIC LUXURY SINCE 2011
+        </div>
+        <nav>
+            <div class="logo">MAISON VEX</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#brands">Brands</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <div class="cart-icon" onclick="toggleCart()">
+                    🛍️
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>MAISON VEX</h1>
+            <p>Where Global Luxury Meets Local Elegance</p>
+            <a href="#shop" class="cta-button">Explore Collection</a>
+        </div>
+    </section>
+
+    <!-- International Brands Section -->
+    <section id="brands">
+        <h2 class="section-title">INTERNATIONAL HOUSES</h2>
+        <div class="brands-grid">
+            <div class="brand-card">
+                <div class="brand-name">CHANEL</div>
+                <div class="brand-origin">Paris, France</div>
+            </div>
+            <div class="brand-card">
+                <div class="brand-name">GUCCI</div>
+                <div class="brand-origin">Florence, Italy</div>
+            </div>
+            <div class="brand-card">
+                <div class="brand-name">LOUIS VUITTON</div>
+                <div class="brand-origin">Paris, France</div>
+            </div>
+            <div class="brand-card">
+                <div class="brand-name">DOLCE & GABBANA</div>
+                <div class="brand-origin">Milan, Italy</div>
+            </div>
+            <div class="brand-card">
+                <div class="brand-name">BALMAIN</div>
+                <div class="brand-origin">Paris, France</div>
+            </div>
+            <div class="brand-card">
+                <div class="brand-name">VALENTINO</div>
+                <div class="brand-origin">Rome, Italy</div>
+            </div>
+            <div class="brand-card">
+                <div class="brand-name">PRADA</div>
+                <div class="brand-origin">Milan, Italy</div>
+            </div>
+            <div class="brand-card">
+                <div class="brand-name">DIOR</div>
+                <div class="brand-origin">Paris, France</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- African Brands Section -->
+    <section>
+        <h2 class="section-title">AFRICAN EXCELLENCE</h2>
+        <div class="brands-grid">
+            <div class="brand-card">
+                <div class="brand-name">BORIAH COUTURE</div>
+                <div class="brand-origin">Nigeria</div>
+            </div>
+            <div class="brand-card">
+                <div class="brand-name">VERANORA COUTURE</div>
+                <div class="brand-origin">Nigeria</div>
+            </div>
+            <div class="brand-card">
+                <div class="brand-name">UTTERSPACE</div>
+                <div class="brand-origin">Luxury Fashion</div>
+            </div>
+            <div class="brand-card">
+                <div class="brand-name">GLOWTARZ</div>
+                <div class="brand-origin">House of Vogue</div>
+            </div>
+            <div class="brand-card">
+                <div class="brand-name">NINI FASHION</div>
+                <div class="brand-origin">Nigeria</div>
+            </div>
+            <div class="brand-card">
+                <div class="brand-name">NOVA BLVD</div>
+                <div class="brand-origin">by Oma</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop Section -->
+    <section id="shop">
+        <h2 class="section-title">FEATURED COLLECTION</h2>
+        <div class="products-grid" id="productsGrid">
+            <!-- Products will be dynamically loaded here -->
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">OUR STORY</h2>
+        <div class="about-content">
+            <p>Founded on September 18, 2011, Maison Vex Luxury Boutique has grown into one of Abuja's most prestigious destinations for international fashion. Located at 42B Libreville Crescent, Wuse 2, Abuja, Maison Vex is more than just a boutique—it is a lifestyle hub where global luxury meets local elegance.</p>
+            
+            <p>At its core, Maison Vex is dedicated to curating the world's most coveted fashion labels under one roof. Each piece is hand-selected to reflect the sophistication, craftsmanship, and exclusivity that define true luxury.</p>
+            
+            <div class="founder-info">
+                <h3>THE VISIONARY</h3>
+                <p><strong>Aisha Bello Ibrahim</strong>, founder and creative director of Maison Vex, has built an empire of elegance with over a decade of experience in fashion retail and brand strategy. Her vision is clear: to create a space where African luxury consumers can discover, experience, and own international fashion without compromise.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title">VISIT OUR BOUTIQUE</h2>
+        <div class="about-content">
+            <p><strong>Location:</strong> 42B Libreville Crescent, Wuse 2, Abuja</p>
+            <p><strong>Hours:</strong> Monday - Saturday: 10:00 AM - 8:00 PM</p>
+            <p><strong>Phone:</strong> +234 XXX XXX XXXX</p>
+            <p><strong>Email:</strong> info@maisonvex.com</p>
+        </div>
+    </section>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-header">
+            <h3>Shopping Bag</h3>
+            <button class="close-cart" onclick="toggleCart()">×</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be displayed here -->
+        </div>
+        <div class="cart-total">
+            <div style="display: flex; justify-content: space-between;">
+                <span>Total:</span>
+                <span id="cartTotal">₦0</span>
+            </div>
+        </div>
+        <button class="checkout-btn" onclick="processCheckout()">PROCEED TO CHECKOUT</button>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>MAISON VEX</h3>
+                <p>Abuja's Premier Luxury Boutique</p>
+                <p>Curating Global Fashion Since 2011</p>
+            </div>
+            <div class="footer-section">
+                <h3>CUSTOMER SERVICE</h3>
+                <a href="#">Personal Shopping</a><br>
+                <a href="#">Size Guide</a><br>
+                <a href="#">Shipping & Returns</a><br>
+                <a href="#">Authentication Guarantee</a>
+            </div>
+            <div class="footer-section">
+                <h3>CONNECT</h3>
+                <a href="#">Instagram</a><br>
+                <a href="#">Facebook</a><br>
+                <a href="#">WhatsApp</a><br>
+                <a href="#">Newsletter</a>
+            </div>
+            <div class="footer-section">
+                <h3>LOCATION</h3>
+                <p>42B Libreville Crescent</p>
+                <p>Wuse 2, Abuja</p>
+                <p>Nigeria</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Maison Vex Luxury Boutique. All Rights Reserved. | Authentic Luxury Since 2011</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

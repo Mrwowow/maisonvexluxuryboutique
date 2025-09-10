@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Maison Vex | Luxury Fashion Collection</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+</head>
+<body>
+    <!-- Header will be loaded by JavaScript -->
+    <div id="header"></div>
+
+    <!-- Page Hero -->
+    <section style="margin-top: 100px; padding: 60px 5%; background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);">
+        <h1 style="text-align: center; font-size: 42px; font-weight: 300; letter-spacing: 5px; margin-bottom: 20px;">SHOP COLLECTION</h1>
+        <p style="text-align: center; color: var(--gray); font-size: 16px; letter-spacing: 1px;">Exclusive Luxury Pieces Handpicked for You</p>
+    </section>
+
+    <!-- Filter Section -->
+    <section style="padding: 40px 5%;">
+        <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+            <button onclick="filterProducts('all')" style="padding: 10px 25px; background: var(--primary-black); color: white; border: 1px solid var(--primary-black); cursor: pointer; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s;">All Products</button>
+            <button onclick="filterProducts('Bags')" style="padding: 10px 25px; background: transparent; border: 1px solid var(--primary-black); cursor: pointer; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s;">Bags</button>
+            <button onclick="filterProducts('Shoes')" style="padding: 10px 25px; background: transparent; border: 1px solid var(--primary-black); cursor: pointer; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s;">Shoes</button>
+            <button onclick="filterProducts('Ready-to-Wear')" style="padding: 10px 25px; background: transparent; border: 1px solid var(--primary-black); cursor: pointer; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s;">Ready-to-Wear</button>
+            <button onclick="filterProducts('Accessories')" style="padding: 10px 25px; background: transparent; border: 1px solid var(--primary-black); cursor: pointer; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s;">Accessories</button>
+        </div>
+    </section>
+
+    <!-- Shop Section -->
+    <section id="shop" style="padding-top: 0;">
+        <div class="products-grid" id="productsGrid">
+            <!-- Products will be dynamically loaded here -->
+        </div>
+    </section>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-header">
+            <h3>Shopping Bag</h3>
+            <button class="close-cart" onclick="toggleCart()">×</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be displayed here -->
+        </div>
+        <div class="cart-total">
+            <div style="display: flex; justify-content: space-between;">
+                <span>Total:</span>
+                <span id="cartTotal">$0</span>
+            </div>
+        </div>
+        <button class="checkout-btn" onclick="processCheckout()">PROCEED TO CHECKOUT</button>
+    </div>
+
+    <!-- Footer will be loaded by JavaScript -->
+    <div id="footer"></div>
+
+    <script src="script.js"></script>
+    <script src="header.js"></script>
+    <script src="footer.js"></script>
+    <script>
+        // Filter products by category
+        function filterProducts(category) {
+            const productsGrid = document.getElementById('productsGrid');
+            let filteredProducts = category === 'all' ? products : products.filter(p => p.category === category);
+            
+            productsGrid.innerHTML = filteredProducts.map(product => `
+                <div class="product-card">
+                    <div class="product-image" style="background-image: url('${product.image}'); background-size: cover; background-position: center;">
+                        <div class="product-badge">${product.badge}</div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-brand">${product.brand}</div>
+                        <div class="product-name">${product.name}</div>
+                        <div class="product-description" style="font-size: 12px; color: var(--gray); margin: 8px 0; line-height: 1.4;">${product.description}</div>
+                        <div class="product-price">$${product.price.toLocaleString()}</div>
+                        <button class="add-to-cart" onclick="addToCart(${product.id})">ADD TO BAG</button>
+                    </div>
+                </div>
+            `).join('');
+            
+            // Update button styles
+            document.querySelectorAll('button').forEach(btn => {
+                if (btn.textContent.includes(category) || (category === 'all' && btn.textContent === 'All Products')) {
+                    btn.style.background = 'var(--primary-black)';
+                    btn.style.color = 'white';
+                } else if (btn.textContent === 'All Products' || btn.textContent === 'Bags' || btn.textContent === 'Shoes' || btn.textContent === 'Ready-to-Wear' || btn.textContent === 'Accessories') {
+                    btn.style.background = 'transparent';
+                    btn.style.color = 'var(--primary-black)';
+                }
+            });
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            loadProducts();
+            updateCart();
+        });
+    </script>
+</body>
+</html>
