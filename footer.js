@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p>Nigeria</p>
                     <br>
                     <p>📞 +234 07033833959</p>
-                    <p>✉️ info@maisonvex.com</p>
+                    <p>✉️ info@maisonvexluxuryboutique.com</p>
                 </div>
             </div>
             <div class="footer-bottom">
