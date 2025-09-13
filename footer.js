@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p>Wuse 2, Abuja</p>
                     <p>Nigeria</p>
                     <br>
-                    <p>📞 +234 XXX XXX XXXX</p>
+                    <p>📞 +234 07033833959</p>
                     <p>✉️ info@maisonvex.com</p>
                 </div>
             </div>

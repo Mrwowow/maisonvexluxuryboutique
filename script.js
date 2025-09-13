@@ -318,7 +318,7 @@ function processCheckout() {
     
     // Initialize Paystack payment
     const handler = PaystackPop.setup({
-        key: 'pk_test_fcfcc1a712b0b422d38cfbe83273a7f06a6536de', // Replace with your Paystack public key
+        key: 'pk_live_8a1f4393bfba58f00a4fe50770a31041e055b068', // Replace with your Paystack public key
         email: 'sales@maisonvexluxuryboutique.com', // Get from user input
         amount: total * 100, // Paystack expects amount in kobo
         currency: 'NGN',
