@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Maison Vex Luxury Boutique. All Rights Reserved. | Authentic Luxury Since 2011</p>
+                <p>&copy; Maison Vex Luxury Boutique. All Rights Reserved. | Authentic Luxury Since 2011</p>
             </div>
         </footer>
     `;
